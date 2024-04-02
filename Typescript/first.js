@@ -68,5 +68,36 @@ function sum(a,b){
 const ans=sum(1,10);
 console.log(ans);
 
+//callbacks
 
+function numberSum(a,b,fntocall){
+    let result= a+b;
+    fntocall(result);
+}
+function displayResult(data){
+    console.log("result of sum:"+data)
+}
+let result=numberSum(1,10,displayResult);
+// console.log(result);
 
+function calculateArthimatic(a,b,type,funToCall){
+
+   let value=funToCall(a,b,type);
+   return value;
+}
+function numberSum(a,b,type){
+    if(type=="sum"){
+        let result = a + b;
+        console.log(result);
+    }
+    // return result;     
+}
+function numberMinus(a,b,type){
+    if(type=="Minus"){
+        let result = a - b;
+        console.log(result);
+    }
+    // return result;     
+}
+let callbackResult=calculateArthimatic(1,2,"Minus",numberMinus);
+// console.log(callbackResult);
